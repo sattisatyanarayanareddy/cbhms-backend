@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Admin Page</h3>
+    
+    <h4>Add doctor</h4>
+    <form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="name">name :</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="specialization">Specialization :</label>
+        <input type="text" id="specialization" name="specialization"><br>
+        <label for="mobile">mobile number :</label>
+        <input type="text" id="mobile" name="mobile"><br>
+        <label for="email">email :</label>
+        <input type="text" id="email" name="email"><br>
+        <label for="username">username :</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">password :</label>
+        <input type="password" id="password" name="password"><br>
+        <label for="gender">gender :</label>
+        <input type="text" id="gender" name="gender"><br>
+        <!--<label for="dob">date of birth :</label>
+        <input type="text" id="dob" name="dob"><br>-->
+        <label for="age">age :</label>
+        <input type="text" id="age" name="age"><br>
+        
+        <label for="languages">languages known :</label>
+        <input type="text" id="languages" name="languages"><br>
+        
+        
+
+        <label for="img">profile image :</label>
+        <input type="file" id="img" name="img" accept="*/file"><br>
+        <input type="submit" value="Submit">
+        {{ res_data }}
+    </form>
+</body>
+</html>

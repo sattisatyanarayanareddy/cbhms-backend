@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> doctor login </h3>
+    <form method="post" action="{% url 'doctor_validate' %}">
+        {% csrf_token %}
+        <label for="username">username :</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">password :</label>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="submit">
+    </form>
+    <p>endpoint doctor_login/ is connected to doctors page in site home</p>
+</body>
+</html>
