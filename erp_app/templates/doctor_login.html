@@ -9,6 +9,9 @@
     <h3> doctor login </h3>
     <form method="post" action="{% url 'doctor_validate' %}">
         {% csrf_token %}
+        {% if err_msg %}
+            <p>{{err_msg}}</p>
+        {% endif %}
         <label for="username">username :</label>
         <input type="text" id="username" name="username"><br>
         <label for="password">password :</label>

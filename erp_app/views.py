@@ -79,6 +79,10 @@ def doctor_validate(request):
                 if patient.password == password:
                     print("passwords matched")
                     return redirect('doctor_dashboard')
+                else:
+                    return render(request,'doctor_login.html',{'err_msg':'wrong password'},status=401)
+            else:
+                return render(request,'doctor_login.html',{'err_msg':'user not exists'},status=401)
     return redirect('doctor_login')
 
 def doctor_dashboard(request):
