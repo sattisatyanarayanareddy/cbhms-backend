@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'hospital_erp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hospital_erp',  
-        'USER': 'admin',
-        'PASSWORD': 'admin123',
-        'HOST': 'database-1.c30ye640cue4.us-east-1.rds.amazonaws.com',
+        'NAME': 'hospital',  
+        'USER': 'root',
+        'PASSWORD': 'sAtya@1712',
+        'HOST': 'localhost',
         'PORT': '3306'
     }
 }
@@ -127,8 +127,10 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+DEFAULT_AUTO_FIELS = 'django.db.models.BigAutoField'
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME':'dsaexevwr',

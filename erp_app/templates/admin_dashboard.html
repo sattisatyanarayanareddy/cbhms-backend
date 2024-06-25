@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
 </head>
 <body>
-    <h4> Admin dashboard </h4>
+    <h4 id="head"> Admin dashboard </h4>
     <h3>Admin dashboard under development</h3>
+    <button onclick="func1()">click here</button>
         <!-- data in jinja -->
+
+        <script src="{% static 'scripts/script.js' %}"></script>
 </body>
 </html>
