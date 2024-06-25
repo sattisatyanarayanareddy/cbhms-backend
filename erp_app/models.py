@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Patient_details_tb(models.Model):
+class Doctors_Details(models.Model):
     name = models.CharField(max_length = 100)
     email = models.CharField(max_length = 150,null=True)
     username = models.CharField(max_length = 150,null=True)

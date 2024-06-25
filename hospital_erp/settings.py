@@ -80,15 +80,13 @@ WSGI_APPLICATION = 'hospital_erp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hospital_erp',
-        'USER': 'root',
-        'PASSWORD': 'surya123',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'hospital_erp',  
+        'USER': 'admin',
+        'PASSWORD': 'admin123',
+        'HOST': 'database-1.c30ye640cue4.us-east-1.rds.amazonaws.com',
+        'PORT': '3306'
     }
-
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import Patient_details,Doctors_login
-from .models import Patient_details_tb
+from .models import Doctors_Details
 from django.http import HttpResponse
 import cloudinary.uploader
 from django.db.models import Q
@@ -34,8 +34,8 @@ def register(request):
             api_secret = settings.CLOUDINARY_STORAGE['API_SECRET'],
             cloud_name = settings.CLOUDINARY_STORAGE['CLOUD_NAME'])
             profile_path = uploading['secure_url']
-            if not Patient_details_tb.objects.filter(Q(username = username)).exists():
-                Patient_details_tb.objects.create(
+            if not Doctors_Details.objects.filter(Q(username = username)).exists():
+                Doctors_Details.objects.create(
                     name = name,
                     age = age,
                     gender = gender,
@@ -63,7 +63,7 @@ def register(request):
         return redirect('home')
 
 def admin_dashboard(request):
-    data = Patient_details_tb.objects.all()
+    data = Doctors_Details.objects.all()
     return render(request,'admin_dashboard.html',{'data':data})
 
 def doctor_login(request):
@@ -74,8 +74,8 @@ def doctor_validate(request):
         if doctor_login.is_valid():
             username = doctor_login.cleaned_data['username']
             password = doctor_login.cleaned_data['password']
-            if Patient_details_tb.objects.filter(Q(username=username)).exists():
-                patient = Patient_details_tb.objects.get(username=username)
+            if Doctors_Details.objects.filter(Q(username=username)).exists():
+                patient = Doctors_Details.objects.get(username=username)
                 if patient.password == password:
                     print("passwords matched")
                     return redirect('doctor_dashboard')
